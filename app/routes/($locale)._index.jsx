@@ -4,6 +4,7 @@ import {Await, useLoaderData} from '@remix-run/react';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 
 import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
+import SimpleSlider from '../components/slider';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
@@ -89,6 +90,7 @@ export default function Homepage() {
 
   return (
     <>
+    <SimpleSlider />
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
