@@ -4,11 +4,16 @@ import {Await, useLoaderData} from '@remix-run/react';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 
 import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
-import SimpleSlider from '../components/slider';
+import SimpleSlider from '../components/Slider';
+import SwiperSlider from '../components/SwiperSlider';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
+// Import Swiper styles
+import 'swiper/css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const headers = routeHeaders;
 
@@ -90,6 +95,7 @@ export default function Homepage() {
 
   return (
     <>
+    <SwiperSlider />
     <SimpleSlider />
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
